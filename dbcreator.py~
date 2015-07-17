@@ -1,0 +1,6 @@
+import pandas, sqlite3
+
+conn = sqlite3.connect('zipdb.db')
+
+df = pandas.read_csv('free-zipcode-database.csv')
+df.to_sql('zipdb.db', conn, flavor='sqlite')
